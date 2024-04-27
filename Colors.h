@@ -76,7 +76,7 @@ namespace color {
     template<typename type>
     inline void showData(type _value, TextColor color) {
         setTextColor(color);
-        cout >> _value;
+        cout << _value;
         reset();
     }
 
