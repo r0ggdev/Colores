@@ -65,13 +65,29 @@ namespace color {
         WORD attributes = (static_cast<WORD>(BG_BLACK) << 4) | static_cast<WORD>(WHITE);
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), attributes);
     }
+
+    template<typename type>
+    inline void dataEntry(type _value, TextColor color) {
+        setTextColor(color);
+        cin >> _value;
+        reset();
+    }
+
+    template<typename type>
+    inline void showData(type _value, TextColor color) {
+        setTextColor(color);
+        cout >> _value;
+        reset();
+    }
+
+    void testColor() {
+	for (int i = 0; i <= 255; i++) {
+       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
+		std::printf("#define name SetConsoleTextAttribute(hConsole,", i, ");\n");
+	}
+}
+    
 }
 
 #endif
 
-//void testColor() {
-//	for (int i = 0; i <= 255; i++) {
-//        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
-//		std::printf("#define name SetConsoleTextAttribute(hConsole,", i, ");\n");
-//	}
-//}
