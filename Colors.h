@@ -67,23 +67,23 @@ namespace color {
     }
 
     template<typename type>
-    inline void dataEntry(type _value, TextColor color) {
+    inline void dataEntry(type& _value, TextColor color) {
         setTextColor(color);
-        cin >> _value;
+        std::cin >> _value;
         reset();
     }
 
     template<typename type>
-    inline void showData(type _value, TextColor color) {
+    inline void showData(type& _value, TextColor color) {
         setTextColor(color);
-        cout << _value;
+        std::cout << _value;
         reset();
     }
 
     void testColor() {
 	for (int i = 0; i <= 255; i++) {
        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
-		std::printf("#define name SetConsoleTextAttribute(hConsole,", i, ");\n");
+		std::cout <<"#define name SetConsoleTextAttribute(hConsole," << i << ");\n";
 	}
 }
     
